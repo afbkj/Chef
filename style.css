@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+}
+#header{
+    background-size: 100px;
+    font-size: 20px;
+    background-color:  white;
+    color: black;
+    flex-direction: row;
+    display: flex;
+}
+#logo{
+    display: block;
+}
+#logoimg{
+    width: 200px;
+    height: 100px;
+    display: inherit;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+#vid1{
+    width: 100%;
+    height: 900px;
+    margin-top: -25px;
+}
+#mbody{
+    height: 2300px;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+#footer{
+    height: 100px;
+    background-size: 100px;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    margin-top: auto;
+}
+#ulli{
+    list-style-type: none;
+    flex-direction: row;
+    display: flex;
+    margin-left: 500px;
+    padding: 25px;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+li a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin-left: 50px;
+}
+/* #menu{
+    
+} */
+
+ .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+.grid-container1 {
+    display: grid;
+    row-gap: 30px;
+    grid-template-columns: auto;
+    align-items: center;
+}
+  
+.grid-item {
+    /*background-color: rgba(207, 204, 204, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8); 
+    padding: 20px;*/
+    font-size: 30px;
+    text-align: center;
+} 
+.grid-item1 {
+    /*background-color: rgba(207, 204, 204, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8); 
+    padding: 20px;*/
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+} 
+#cata{
+    display: flex;
+    margin-left: 100px;
+}
+#bcd{
+    width: 450px;
+}
+#welcome{
+    width: 90%;
+    height: 600px;
+    margin: 20px;
+    margin-left: 50px;
+}
+#about{
+    width: 90%;
+    height: 600px;
+    margin: 20px;
+}
+#order{
+    width: 90%;
+    height: 600px;
+    margin-left: 20px;
+}
+#imgwelc{
+    width: 800px;
+    height: 600px;
+}
+#imgord{
+    width: 900px;
+    height: 600px;
+}
+#txtwelc{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#footcontact{
+    text-decoration: none;
+    color: white;
+}
