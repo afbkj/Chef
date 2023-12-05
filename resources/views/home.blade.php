@@ -46,7 +46,7 @@
             @auth
             <a href="{{url('/showcart', Auth::user()->id)}}">
 
-            Cart[{{$count}}]
+              Cart[{{$count}}]
             </a>
 
             @endauth
