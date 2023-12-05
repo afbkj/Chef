@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for chef2 on 2023-12-05T04:57:00+08:00
+# fly.toml app configuration file generated for resta-nameless-fire-2533 on 2023-12-05T03:59:46+08:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "chef2"
+app = "resta-nameless-fire-2533"
 primary_region = "hkg"
 console_command = "php /var/www/html/artisan tinker"
 
@@ -19,10 +19,6 @@ console_command = "php /var/www/html/artisan tinker"
   LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
   SESSION_DRIVER = "cookie"
   SESSION_SECURE_COOKIE = "true"
-  DB_CONNECTION = "mysql"
-  DB_HOST = "<MYSQL Fly .internal Address>"
-  DB_DATABASE = "resta"
-  MYSQL_ATTR_SSL_CA = "/etc/ssl/certs/ca-certificates.crt"
 
 [http_service]
   internal_port = 8080
@@ -31,17 +27,6 @@ console_command = "php /var/www/html/artisan tinker"
   auto_start_machines = true
   min_machines_running = 0
   processes = ["app"]
-
-[[http_service.checks]]
-  grace_period = "10s"
-  interval = "15s"
-  method = "GET"
-  timeout = "5s"
-  path = "/"
-
-[deploy]
-  #strategy = "bluegree"
-  released_command = "php artisan migrate --force"
 
 [[vm]]
   cpu_kind = "shared"
