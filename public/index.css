@@ -58,7 +58,7 @@
     align-items: end;
 }
 .menu{
-  margin-left: 40%;
+  text-align: center;
   font-size: 40px;
 }
 /* .loginBttn{
@@ -117,14 +117,22 @@ html {
 }
 
 #tranding .tranding-slider {
-  height: 52rem;
+  height: 62rem;
   padding: 2rem 0;
   position: relative;
+  /* margin-right: -50%; */
+  
 }
 
 @media (max-width:500px) {
   #tranding .tranding-slider {
     height: 45rem;
+  transition: 0.2s linear;
+  }
+}
+@media (min-width:4100px) {
+  #tranding .tranding-slider {
+    margin-right: -55%;
   transition: 0.2s linear;
   }
 }
@@ -204,15 +212,6 @@ html {
   }
 }
 
-.tranding-slider-control .slider-arrow {
-  background: var(--white);
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  left: 42%;
-  transform: translateX(-42%);
-  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
-}
 
 .tranding-slider-control .slider-arrow ion-icon {
   font-size: 2rem;
@@ -310,6 +309,12 @@ html {
   margin-left: 55%;
   margin-top: 50px;
 }
+@media screen and (min-width: 2000px) {
+  .reserv{
+    
+  width: 20%;
+  }
+}
 .phone{
   width: 40%;
   height: 80px;
@@ -360,6 +365,7 @@ html {
   background-color: gray;
   text-align: center;
   padding-top: 30px;
+  margin-top: 100px;
 }
 .icn{
   color: white;
@@ -386,6 +392,14 @@ html {
 .card-content{
   background: #fff;
   height: 300px;
+}
+@media screen and (max-width: 680px) {
+  .card-content{
+    background: #fff;
+    height: 300px;
+    width: 30%;
+    margin-left: 35%;
+  }
 }
 .card-content h3{
   text-align: center;

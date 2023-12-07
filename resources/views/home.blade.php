@@ -28,7 +28,7 @@
         </li>
         <li class="menu_items">
           <a href="#menu">
-            Menuu
+            Menu
           </a>
         </li>
         <li class="menu_items">
@@ -59,19 +59,33 @@
           </a>
         </li>
 
-        @if (Route::has('login'))
+        <li class="menu_items" style="margin-left: -15%;">
 
-        @auth
+          @if (Route::has('login'))
+          <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
 
-        <li class="menu_items">
+            @auth
+        <li>
           <x-app-layout>
 
           </x-app-layout>
         </li>
+        @else
+        <li>
+          <a href="{{route('login')}}"></a>
+        </li>
+
+        <li>
+          <a href="{{route('register')}}"></a>
+        </li>
         @endauth
-        @endif
+
     </div>
-    </ul>
+
+    @endif
+    </li>
+  </div>
+  </ul>
   </div>
   </div>
   <div class="body">
