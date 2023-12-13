@@ -121,7 +121,7 @@
       <a target="_blank" href="https://twitter.com/">
         <i class="fa-brands fa-twitter"></i>
       </a>
-      <a target="_blank" href="https://www.instagram.com/">
+      <a target="_blank" href="https://www.instagram.com/ ">
         <i class="fa-brands fa-instagram"></i>
       </a>
     </span>
