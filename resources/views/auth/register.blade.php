@@ -1,4 +1,9 @@
 <x-guest-layout>
+    <link rel="stylesheet" href="style.css">
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -47,6 +52,13 @@
             <x-primary-button class="ms-4">
                 {{ __('Register') }}
             </x-primary-button>
+
+            <x-primary-button style="margin-left:30px;">
+                <div class="go"><a href="/" style="text-decoration: none; color:white; margin-left:30px">Home</a></i></div>
+            </x-primary-button>
+            <!-- <div class="social">
+                <div class="go"><a href="home" style="text-decoration: none; color:white;">Home</a></i></div>
+            </div> -->
         </div>
     </form>
 </x-guest-layout>

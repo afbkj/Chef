@@ -1,4 +1,9 @@
 <x-guest-layout>
+    <link rel="stylesheet" href="style.css">
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -41,6 +46,10 @@
 
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
+            </x-primary-button>
+
+            <x-primary-button class="ms-4">
+                <div class="go"><a href="/" style="text-decoration: none; color:white; width:50px; margin-left:30px;">Home</a></i></div>
             </x-primary-button>
         </div>
     </form>

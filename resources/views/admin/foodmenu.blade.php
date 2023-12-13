@@ -23,23 +23,23 @@
 
                 <div>
                     <label for="">Title</label>
-                    <input style="color:white; margin-left:5px; background-color: gray;" type="text" name="title" placeholder="
+                    <input style="color:white; margin-left:20px; background-color: white;" type="text" name="title" placeholder="
                     Write a title" required id="">
                 </div>
 
                 <div>
                     <label for="">Price</label>
-                    <input style="color:white; background-color: gray;" type="text" name="price" placeholder="
+                    <input style="color:white; background-color: white; margin: 15px;" type="text" name="price" placeholder="
                     Write a price" required id="">
                 </div>
 
                 <div>
                     <label for="">Image</label>
-                    <input style="color:white" type="file" name="image" required id="">
+                    <input style="color:white; margin: 15px;" type="file" name="image" required id="">
                 </div>
 
                 <div >
-                    <input style="background-color:white; color: black" type="submit" value="Save">
+                    <input style="background-color:white; color: black; border-radius:20%; margin: 10px; width: 50px;" type="submit" value="Save">
                 </div>
 
             </form>

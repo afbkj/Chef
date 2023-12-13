@@ -5,6 +5,7 @@
             
 
             <div align="right" class="hidden sm:flex sm:items-center sm:ms-6">
+                <div style="width: 90%; background-color:transparent; margin-left:100%;"></div>
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ms-3 relative">
@@ -86,6 +87,9 @@
 
                             <x-dropdown-link href="{{ route('profile.show') }}">
                                 {{ __('Profile') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link href="{{url('/')}}">
+                                {{ __('Home') }}
                             </x-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())

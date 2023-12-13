@@ -65,8 +65,8 @@
           </div>
 
           <div class="form-row">
-            <input style="height: 30px" type="number" name="guest" placeholder="How Many Persons?" min="1">
-            <input type="submit" id="form-submit" value="Book a table">
+            <input style="height: 30px" type="number" name="guest" placeholder="How Many Person?" min="1">
+            <input type="submit" id="form-submit" value="Book table">
           </div>
         </div>
       </div>

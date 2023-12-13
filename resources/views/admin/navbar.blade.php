@@ -12,9 +12,9 @@
         </div>
       </div>
       <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <nav class="sidebar sidebar-offcanvas" style="background-color: black;" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="/"><img src="adminn/assets/images/Logo1.png" alt="logo" style="height: 80px;" /></a>
+          <a class="sidebar-brand brand-logo" style="background-color: white; height: 70px; margin-top: -10px;" href="/"><img src="adminn/assets/images/Logo1.png" alt="logo" style="height: 80px;" /></a>
         </div>
         <ul class="nav">
           

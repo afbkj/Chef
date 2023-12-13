@@ -27,16 +27,16 @@
 
         <div>
             <label for="">Speciality</label>
-            <input style="color:white; background-color: gray;" name="speciality" placeholder="Enter speciality"
+            <input style="color:white; background-color: gray; margin-top: 15px;" name="speciality" placeholder="Enter speciality"
              type="text" required="">
         </div>
 
         <div>
-            <input type="file" name="image" required="">
+            <input type="file" style="margin: 15px;" name="image" required="">
         </div>
 
         <div>
-            <input style="color: black; background-color: white;" type="submit" value="Save">
+            <input style="color: black; width:50px; background-color: white;  border-radius:20%; margin: 15px;" type="submit" value="Save">
         </div>
     </form>
 

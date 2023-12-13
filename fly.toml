@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for sysa on 2023-12-07T10:50:51+08:00
+# fly.toml app configuration file generated for chefsyst on 2023-12-07T14:09:27+08:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "sysa"
+app = "chefsyst"
 primary_region = "hkg"
 console_command = "php /var/www/html/artisan tinker"
 

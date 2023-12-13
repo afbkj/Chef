@@ -21,7 +21,7 @@
         @csrf
         <div>
             <label for="">Chef Name</label>
-            <input style="color: black;" type="text" name="name" 
+            <input style="color: black; " type="text" name="name" 
             value="{{$data->name}}">
         </div>
 
