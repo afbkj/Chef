@@ -115,13 +115,13 @@
 
   <div class="footer">
     <span class="icn">
-      <a href="">
+      <a target="_blank" href="https://fb.com/">
         <i class="fa-brands fa-facebook"></i>
       </a>
-      <a href="">
+      <a target="_blank" href="https://twitter.com/">
         <i class="fa-brands fa-twitter"></i>
       </a>
-      <a href="">
+      <a target="_blank" href="https://www.instagram.com/">
         <i class="fa-brands fa-instagram"></i>
       </a>
     </span>

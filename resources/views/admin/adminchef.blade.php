@@ -21,13 +21,13 @@
 
         <div style="color: white;">
             <label for="">Name</label>
-            <input style="color:white; margin-left:27px; background-color: gray;" name="name" placeholder="Enter name"
+            <input style="color:black; margin-left:27px; background-color: white;" name="name" placeholder="Enter name"
              type="text">
         </div>
 
         <div>
             <label for="">Speciality</label>
-            <input style="color:white; background-color: gray; margin-top: 15px;" name="speciality" placeholder="Enter speciality"
+            <input style="color:black; background-color: white; margin-top: 15px;" name="speciality" placeholder="Enter speciality"
              type="text" required="">
         </div>
 
