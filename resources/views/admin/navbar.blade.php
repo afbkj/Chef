@@ -64,6 +64,16 @@
               <span class="menu-title">Orders</span>
             </a>
           </li>
+
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('/admin/coupons')}}">
+              <span class="menu-icon">
+                <i style="width: 25px; height:20px"><img src="image/coupon.png" alt=""></i>
+              </span>
+              <span class="menu-title">Coupons</span>
+            </a>
+          </li>
           
         </ul>
       </nav>

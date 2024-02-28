@@ -115,12 +115,12 @@ html {
     padding: 7rem 0;
   }
 }
-
+/*end bs chef hesgin zurgiin ondor bh shg bn*/
 #tranding .tranding-slider {
   height: 62rem;
   padding: 2rem 0;
   position: relative;
-  /* margin-right: -50%; */
+  margin-right: 5%; 
   
 }
 
@@ -132,36 +132,38 @@ html {
 }
 @media (min-width:4100px) {
   #tranding .tranding-slider {
-    margin-right: -55%;
+    /* margin-right: -55%; */
   transition: 0.2s linear;
   }
 }
 
+/*ene heseg ni slider hesgiin body*/
 .tranding-slide {
-  width: 37rem;
-  height: 50rem;
+  width: 21rem;
+  height: 22rem;
   position: relative;
 }
-
+/*slider hesgiin zurgiin hesg*/
 .tranding-slide .tranding-slide-img img {
-  width: 37rem;
-  height: 42rem;
+  width: 20rem;
+  height: 25rem;
   border-radius: 2rem;
   object-fit: cover;
 }
 
-
+/*brg l slider iin button*/
 .tranding-slide-content .tranding-slide-content-bottom {
   position: relative;
   bottom: 0.5rem;
   color: var(--white);
   background-color: rgba(0, 0, 0, 0.533);
   width: 100%;
-  height: 20px;
+  height: 10px;
   transition-property: height;
   transition-duration: 1s;
   opacity: 0;
 }
+/*buttonii hover*/
 .tranding-slide-content-bottom:hover{
   opacity: 1;
   height: 60px;
@@ -173,7 +175,7 @@ html {
 
 .tranding-slider-control {
   position: relative;
-  bottom: 2rem;
+  bottom: 20rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,10 +215,10 @@ html {
 }
 
 
-.tranding-slider-control .slider-arrow ion-icon {
-  font-size: 2rem;
+/* .tranding-slider-control .slider-arrow ion-icon {
+  font-size: 20rem;
   color: #222224;
-}
+} */
 
 .tranding-slider-control .swiper-pagination {
   position: relative;
@@ -440,4 +442,9 @@ form input[type = submit]:hover{
       grid-template-columns: 100%;
       width: 100vw;
   }
+}
+
+.cpnicn{
+  width: 40px;
+  height: 50px;
 }

@@ -91,6 +91,9 @@
                             <x-dropdown-link href="{{url('/')}}">
                                 {{ __('Home') }}
                             </x-dropdown-link>
+                            <x-dropdown-link href="{{route('admin.coupons')}}">
+                                {{ __('Coupons') }}
+                            </x-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-dropdown-link href="{{ route('api-tokens.index') }}">

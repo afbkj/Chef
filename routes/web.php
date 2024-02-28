@@ -5,6 +5,9 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgetPassword;
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Admin\AdminAddCouponComponent;
+use App\Livewire\Admin\AdminCouponsComponent;
+use App\Livewire\Admin\AdminEditCouponComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,6 +78,10 @@ Route::post("/orderconfirm", [HomeController::class, "orderconfirm"]);
 Route::get("/orders", [AdminController::class, "orders"]);
 
 Route::get("/search", [AdminController::class, "search"]);
+
+Route::get("/admin/coupons", AdminCouponsComponent::class)->name("admin.coupons");
+Route::get("/admin/coupon/add", AdminAddCouponComponent::class)->name("admin.addcoupon");
+Route::get("admin/coupon/edit/{coupon_id}", AdminEditCouponComponent::class)->name('admin.editcoupon');
 
 
 

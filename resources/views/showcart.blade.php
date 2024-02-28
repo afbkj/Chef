@@ -77,8 +77,8 @@
         </ul>
     </div>
 
-    <div">
-        <table style="width:100%; " align="center" bgcolor="gray" color="green">
+    <div>
+        <table style="width:100%; "  align="baseline" bgcolor="gray" color="green">
             <tr style="height:160px; width: 100%">
                 <th style="padding: 30px;">Food</th>
                 <th style="padding: 30px;">Price</th>
@@ -115,7 +115,7 @@
                 <tr>
                     <td>
 
-                    <td style="background-color: white; position: relative; top: -30px; right: -55%;"><a href="{{url('/remove',$data2->id)}}" class="btn btn-warning">Remove</a></td>
+                    <td style="background-color: white; position: relative; bottom: 12vh; right: -55%;"><a href="{{url('/remove',$data2->id)}}" class="btn btn-warning">Remove</a></td>
 
                     </td>
                 </tr>
