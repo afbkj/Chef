@@ -78,8 +78,8 @@
     </div>
 
     <div>
-        <table style="width:100%; "  align="baseline" bgcolor="gray" color="green">
-            <tr style="height:160px; width: 100%">
+        <table class="cart" color="green">
+            <tr class="tr1">
                 <th style="padding: 30px;">Food</th>
                 <th style="padding: 30px;">Price</th>
                 <th style="padding: 30px;">Quantity</th>
@@ -91,7 +91,7 @@
             @csrf
                 @foreach($data as $data)
 
-                <tr align="center">
+                <tr >
                     <td>
                         <input type="text" name="foodname[]" value="{{$data->title}}" hidden="" id="">
                         {{$data->title}}
@@ -113,11 +113,9 @@
                 @foreach($data2 as $data2)
 
                 <tr>
-                    <td>
 
-                    <td style="background-color: white; position: relative; bottom: 12vh; right: -55%;"><a href="{{url('/remove',$data2->id)}}" class="btn btn-warning">Remove</a></td>
+                    <td class="td1"><a href="{{url('/remove',$data2->id)}}" class="btn btn-warning">Remove</a></td>
 
-                    </td>
                 </tr>
                 @endforeach
         </table>
@@ -146,6 +144,18 @@
             <div style="padding: 10px;">
                 <input style=" font-size: 15px; background-color: rgb(10, 173, 10); font-size:20px; border-radius: 8px; color:white;" type="submit" value="Order Confirm" id="">
                 <button style="background-color: red; font-size:20px; border-radius:8px; color:white;" id="close" type="button">Close</button>
+            </div>
+
+
+            
+
+            <a href="#" class="have-code">Have a code?</a>
+
+            <div class="have-code-container">
+                <form action="{{route('coupon.store')}}" method="POST">
+                    <input type="text" name="coupon_code" id="coupon_code">
+                    <button type="submit" class="cpn-btn">Apply</button>
+                </form>
             </div>
 
         </div>

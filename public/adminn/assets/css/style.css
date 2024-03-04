@@ -20329,6 +20329,7 @@ div.tagsinput {
   font-weight: normal;
   padding: 0;
   width: 244px;
+  height: 100vh;
   z-index: 11;
   transition: width 0.25s ease, background 0.25s ease;
   -webkit-transition: width 0.25s ease, background 0.25s ease;
@@ -20339,9 +20340,9 @@ div.tagsinput {
     -webkit-transition: width 0.25s ease, background 0.25s ease;
     -moz-transition: width 0.25s ease, background 0.25s ease;
     -ms-transition: width 0.25s ease, background 0.25s ease;
-    background: #191c24;
-    width: 244px;
-    height: 70px; }
+    background: white;
+    width: 209px;
+    height: 60px; }
     @media (max-width: 991px) {
       .sidebar .sidebar-brand-wrapper {
         width: 55px; } }
@@ -20811,7 +20812,9 @@ div.tagsinput {
 
 .container-scroller {
   display: flex;
-  position: relative; }
+  position: relative; 
+  margin-top: -50px;
+}
 
 .main-panel {
   transition: width 0.25s ease, margin 0.25s ease;

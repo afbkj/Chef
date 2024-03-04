@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CouponsController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgetPassword;
@@ -79,9 +80,12 @@ Route::get("/orders", [AdminController::class, "orders"]);
 
 Route::get("/search", [AdminController::class, "search"]);
 
-Route::get("/admin/coupons", AdminCouponsComponent::class)->name("admin.coupons");
-Route::get("/admin/coupon/add", AdminAddCouponComponent::class)->name("admin.addcoupon");
-Route::get("admin/coupon/edit/{coupon_id}", AdminEditCouponComponent::class)->name('admin.editcoupon');
+Route::post('/coupon', 'CouponsController@store')->name('coupon.store');
+Route::delete('/coupon', 'CouponsController@destroy')->name('coupon.destroy');
+
+// Route::get("/admin/coupons", AdminCouponsComponent::class)->name("admin.coupons");
+// Route::get("/admin/coupon/add", AdminAddCouponComponent::class)->name("admin.addcoupon");
+// Route::get("admin/coupon/edit/{coupon_id}", AdminEditCouponComponent::class)->name('admin.editcoupon');
 
 
 

@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index(){
 
         if(Auth::id()){
-            return redirect('redirects');
+            return redirect('users');
         }else
 
         $data = food::all();

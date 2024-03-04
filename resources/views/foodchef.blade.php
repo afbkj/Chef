@@ -1,28 +1,22 @@
-<h1 id="abus">About us</h1>
-<div class="swiper tranding-slider">
-    <div class="swiper-wrapper">
+
+
+
+
+<div class="chefbg">
+    <h1 id="abus">About us</h1>
+    <div class="chef-grid-container">
         @foreach($data2 as $data2)
-        <!-- <div  class="about">
-        <div style="height:200px; width:200px;" class="grid-container">
-            <div  class="grid-item">
-                <img src="chefimage/{{$data2->image}}" id="img1" alt="">
-                    <h4>{{$data2->name}}</h4>
-                    <span>{{$data2->speciality}}</span>
-            </div>
-        </div>
-    </div> -->
-        <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-                <img src="/chefimage/{{$data2->image}}" alt="Tranding">
-            </div>
-            <div class="tranding-slide-content">
-                <div class="tranding-slide-content-bottom">
-                    <h4>{{$data2->name}}</h4>
-                    <span>{{$data2->speciality}}</span>
-                </div>
+        <div class="chef-grid-item">
+
+        
+            <img style="width: 90%; height: 290px; border-radius:10px;" src="/chefimage/{{$data2->image}}" alt="">
+
+            <div class="chef-name">
+                <h4>{{$data2->name}}</h4>
+                <h6>{{$data2->speciality}} hariutssan togooch</h6>
             </div>
         </div>
         @endforeach
-
-    </div>
+    </div>  
+    <h1 style="text-align: center;"><button style="border: none;">See more</button></h1>
 </div>
