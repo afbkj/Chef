@@ -1,22 +1,17 @@
-
-
-
-
-<div class="chefbg">
-    <h1 id="abus">About us</h1>
+<div class="chef-section" id="chef-section">
+    <h1 class="section-title">About us</h1>
     <div class="chef-grid-container">
-        @foreach($data2 as $data2)
+        @foreach($data2 as $chef)
         <div class="chef-grid-item">
-
-        
-            <img style="width: 90%; height: 290px; border-radius:10px;" src="/chefimage/{{$data2->image}}" alt="">
-
-            <div class="chef-name">
-                <h4>{{$data2->name}}</h4>
-                <h6>{{$data2->speciality}} hariutssan togooch</h6>
+            <img class="chef-image" src="/chefimage/{{$chef->image}}" alt="{{$chef->name}}">
+            <div class="chef-details">
+                <h4 class="chef-name">{{$chef->name}} {{$chef->speciality}} hariutssan togooch</h4>
+                <!-- <h6 class="chef-speciality">{{$chef->speciality}} hariutssan togooch</h6> -->
             </div>
         </div>
         @endforeach
-    </div>  
-    <h1 style="text-align: center;"><button style="border: none;">See more</button></h1>
+    </div>
+    <!-- <div class="see-more-container">
+        <button class="see-more-button">See more</button>
+    </div> -->
 </div>

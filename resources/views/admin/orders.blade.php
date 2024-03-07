@@ -21,11 +21,12 @@
                     <tr>
                         <th>Name</th>
                         <th>Phone</th>
-                        <th>Address</th>
+                        <!-- <th>Address</th> -->
                         <th>Food Name</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total Price</th>
+                        <!-- <th>Delete</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +34,7 @@
                     <tr>
                         <td>{{ $order->name }}</td>
                         <td>{{ $order->phone }}</td>
-                        <td>{{ $order->address }}</td>
+                        <!-- <td>{{ $order->address }}</td> -->
                         <td>{{ $order->foodname }}</td>
                         <td>{{ $order->price }}K</td>
                         <td>{{ $order->quantity }}</td>

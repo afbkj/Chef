@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     public function user(){
-        $data=user::all();
-        return view("admin.users", compact("data"));
+        $data3=user::all();
+        return view("admin.users", compact("data3"));
     }
 
     public function deleteuser($id){

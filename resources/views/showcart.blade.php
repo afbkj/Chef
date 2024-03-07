@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-app-layout>
+
+</x-app-layout>
 
 <head>
     <base href="/public">
@@ -15,13 +16,14 @@
 </head>
 
 <body>
-    <div class="header">
+    <!-- <div class="header">
         <div class="logo">
             <a href="/#">
                 <img src="image/Logo1.png" alt="" class="logo">
             </a>
         </div>
         <div class="menu">
+            
 
             <ul>
                 <li class="menu_items">
@@ -67,18 +69,99 @@
                 @auth
 
                 <li class="menu_items">
-                    <x-app-layout>
 
-                    </x-app-layout>
                 </li>
                 @endauth
                 @endif
         </div>
         </ul>
-    </div>
+    </div> -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        table.cart {
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .tr1 {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .tr1 th {
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        table.cart td {
+            padding: 15px;
+            font-size: 16px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .td1 a {
+            color: #fff;
+            background-color: #dc3545;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        #order {
+            background-color: rgba(0, 0, 255, 0.694);
+            font-size: 20px;
+            border-radius: 8px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        #appear {
+            padding: 20px;
+            display: none;
+            text-align: center;
+        }
+
+        #appear label {
+            margin-bottom: 15px;
+            display: block;
+            font-size: 18px;
+            color: #333;
+        }
+
+        #appear input {
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 80%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        #appear button,
+        #close {
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
 
     <div>
-        <table class="cart" color="green">
+        <table class="cart">
             <tr class="tr1">
                 <th style="padding: 30px;">Food</th>
                 <th style="padding: 30px;">Price</th>
@@ -104,20 +187,23 @@
                     <input type="text" name="quantity[]" value="{{$data->quantity}}" hidden="" id="">
                         {{$data->quantity}}
                     </td>
+                    
 
                 </tr>
 
+
                 @endforeach
-
-
                 @foreach($data2 as $data2)
 
                 <tr>
 
-                    <td class="td1"><a href="{{url('/remove',$data2->id)}}" class="btn btn-warning">Remove</a></td>
+                    <td class="td1">
+                        <a href="{{url('/remove',$data2->id)}}" class="btn btn-warning">Remove</a>
+                    </td>
 
                 </tr>
                 @endforeach
+
         </table>
 
         <div align="center" style="padding: 10px;">
@@ -136,10 +222,10 @@
                 <input style=" margin-left:20px;" type="number" name="phone" placeholder="Phone Number" id="">
             </div>
 
-            <div style="padding: 10px;">
+            <!-- <div style="padding: 10px;">
                 <label for="">Address</label>
                 <input type="text" name="address" placeholder="Address" id="">
-            </div>
+            </div> -->
 
             <div style="padding: 10px;">
                 <input style=" font-size: 15px; background-color: rgb(10, 173, 10); font-size:20px; border-radius: 8px; color:white;" type="submit" value="Order Confirm" id="">
@@ -149,14 +235,14 @@
 
             
 
-            <a href="#" class="have-code">Have a code?</a>
+            <!-- <a href="#" class="have-code">Have a code?</a>
 
             <div class="have-code-container">
                 <form action="{{route('coupon.store')}}" method="POST">
                     <input type="text" name="coupon_code" id="coupon_code">
                     <button type="submit" class="cpn-btn">Apply</button>
                 </form>
-            </div>
+            </div> -->
 
         </div>
         </form>
@@ -204,5 +290,3 @@
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
         <script src="script.js"></script>
 </body>
-
-</html>

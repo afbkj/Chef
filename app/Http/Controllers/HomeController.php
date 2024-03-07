@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index(){
 
         if(Auth::id()){
-            return redirect('users');
+            return redirect('redirects');
         }else
 
         $data = food::all();
@@ -30,10 +30,11 @@ class HomeController extends Controller
     public function redirects(){
         $data = food::all();
         $data2 = foodchef::all();
+        $data3=user::all();
         $usertype= Auth::user()->usertype;
 
         if($usertype == '2'){
-            return view('admin.adminhome');
+            return view('admin.users', compact("data3"));
         }
         else{
             $user_id =Auth::id();

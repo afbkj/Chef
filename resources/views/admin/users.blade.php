@@ -79,7 +79,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($data as $user)
+                @foreach($data3 as $user)
                 <tr>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>

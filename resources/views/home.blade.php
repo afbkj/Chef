@@ -32,7 +32,7 @@
           </a>
         </li>
         <li class="menu_items">
-          <a href="#abus">
+          <a href="#chef-section">
             About
           </a>
         </li>
@@ -66,9 +66,7 @@
 
             @auth
         <li>
-          <x-app-layout>
-
-          </x-app-layout>
+          <!-- end x-app-layout bsn -->
         </li>
         @else
         <li>
