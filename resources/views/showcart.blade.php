@@ -163,46 +163,39 @@
     <div>
         <table class="cart">
             <tr class="tr1">
+                <th style="padding: 30px;">Action</th>
                 <th style="padding: 30px;">Food</th>
                 <th style="padding: 30px;">Price</th>
                 <th style="padding: 30px;">Quantity</th>
-                <th style="padding: 30px;">Action</th>
             </tr>
 
             <form action="{{url('orderconfirm')}}" method="POST">
 
             @csrf
-                @foreach($data as $data)
+            <div style="display: flex;">
+            @foreach($data2 as $index => $item)
+<tr style="position: relative; padding-top: 20px; margin-left: 40px;">
+    <td>
+        <a href="{{url('/remove',$item->id)}}" class="btn btn-warning">Remove</a>
+    </td>
+    @if(isset($data[$index]))
+        <td>
+            <input type="text" name="foodname[]" value="{{$data[$index]->title}}" hidden="">
+            {{$data[$index]->title}}
+        </td>
+        <td>
+            <input type="text" name="price[]" value="{{$data[$index]->price}}" hidden="">
+            {{$data[$index]->price}}.000
+        </td>
+        <td>
+            <input type="text" name="quantity[]" value="{{$data[$index]->quantity}}" hidden="">
+            {{$data[$index]->quantity}}
+        </td>
+    @endif
+</tr>
+@endforeach
 
-                <tr >
-                    <td>
-                        <input type="text" name="foodname[]" value="{{$data->title}}" hidden="" id="">
-                        {{$data->title}}
-                    </td>
-                    <td>
-                    <input type="text" name="price[]" value="{{$data->price}}" hidden="" id="">
-                        {{$data->price}}.000
-                    </td>
-                    <td>
-                    <input type="text" name="quantity[]" value="{{$data->quantity}}" hidden="" id="">
-                        {{$data->quantity}}
-                    </td>
-                    
-
-                </tr>
-
-
-                @endforeach
-                @foreach($data2 as $data2)
-
-                <tr>
-
-                    <td class="td1">
-                        <a href="{{url('/remove',$data2->id)}}" class="btn btn-warning">Remove</a>
-                    </td>
-
-                </tr>
-                @endforeach
+            </div>
 
         </table>
 

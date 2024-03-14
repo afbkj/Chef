@@ -87,6 +87,44 @@ class HomeController extends Controller
 
         $data->delete();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
         return redirect()->back();
     }
 
