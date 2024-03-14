@@ -181,7 +181,7 @@
                     </td>
                     <td>
                     <input type="text" name="price[]" value="{{$data->price}}" hidden="" id="">
-                        {{$data->price}}
+                        {{$data->price}}.000
                     </td>
                     <td>
                     <input type="text" name="quantity[]" value="{{$data->quantity}}" hidden="" id="">
