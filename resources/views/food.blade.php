@@ -21,7 +21,7 @@
               <div class="tranding-slide-content">
                 <div class="tranding-slide-content-bottom">
                   <h2 class="food-name">
-                    {{$data->title}} - {{$data->price}}
+                    {{$data->title}} - {{$data->price}}.000
                   </h2>
                 </div>
               </div>

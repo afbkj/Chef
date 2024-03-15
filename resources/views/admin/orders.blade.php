@@ -36,9 +36,9 @@
                         <td>{{ $order->phone }}</td>
                         <!-- <td>{{ $order->address }}</td> -->
                         <td>{{ $order->foodname }}</td>
-                        <td>{{ $order->price }}K</td>
+                        <td>{{ $order->price }}.000</td>
                         <td>{{ $order->quantity }}</td>
-                        <td>{{ $order->price * $order->quantity }}K</td>
+                        <td>{{ $order->price * $order->quantity }}.000</td>
                     </tr>
                     @endforeach
                 </tbody>

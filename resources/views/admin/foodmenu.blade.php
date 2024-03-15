@@ -46,7 +46,7 @@
                         @foreach($data as $item)
                             <tr align="center">
                                 <td>{{ $item->title }}</td>
-                                <td>{{ $item->price }}K</td>
+                                <td>{{ $item->price }}.000</td>
                                 <td style="width: 200px"><img src="/foodimage/{{ $item->image }}" alt=""></td>
                                 <td><a href="{{ url('/deletemenu', $item->id) }}" class="btn btn-danger">Delete</a></td>
                                 <td><a href="{{ url('/updateview', $item->id) }}" class="btn btn-info">Update</a></td>
