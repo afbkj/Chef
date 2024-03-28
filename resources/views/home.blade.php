@@ -32,7 +32,7 @@
           </a>
         </li>
         <li class="menu_items">
-          <a href="#chef-section">
+          <a href="{{url('/foodchef')}}">
             About
           </a>
         </li>
@@ -103,7 +103,7 @@
   @include("food")
   <!-- Slide duuslaa -->
 
-  @include("foodchef")
+  <!-- include("foodchef") -->
   <!-- reserv start -->
 
   @include("reservation")

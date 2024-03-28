@@ -176,7 +176,7 @@
             @foreach($data2 as $index => $item)
 <tr style="position: relative; padding-top: 20px; margin-left: 40px;">
     <td>
-        <a href="{{url('/remove',$item->id)}}" class="btn btn-warning">Remove</a>
+        <a href="{{url('/remove',$item->id)}}" class="btn btn-warning" style="background-color: red; color:white; border-radius: 5px; padding:2px;">Remove</a>
     </td>
     @if(isset($data[$index]))
         <td>

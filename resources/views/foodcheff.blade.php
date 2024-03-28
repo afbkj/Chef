@@ -35,7 +35,7 @@
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
-            max-height: 80vh; /* Adjust the maximum height */
+            max-height: 70vh; /* Adjust the maximum height */
             overflow: auto; 
         }
 
@@ -54,7 +54,7 @@
 
         .chef-card {
             flex: 0 1 calc(50% - 20px); /* Set width for two columns */
-            max-width: 500px; /* Limit the maximum width of each card */
+            max-width: 400px; /* Limit the maximum width of each card */
             background-color: #fff;
             border-radius: 10px;
             overflow: hidden;
@@ -70,7 +70,7 @@
 
         .chef-image img {
             width: 100%;
-            height: 330px; /* Set height of the image */
+            height: 300px; /* Set height of the image */
             object-fit: contain;
             object-position: top;
             border-radius: 10px 10px 0 0;
