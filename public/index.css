@@ -374,11 +374,39 @@ html {
   padding-top: 30px;
 }
 .icn{
-  color: white;
+  color: red;
   background-color: transparent;
   margin-left: 30px;
   padding: 10px;
+  
 }
+
+.footer {
+  background-color: #212529;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer .icn a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer .icn a:hover {
+  color: orange;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 576px) {
+  .footer .icn a {
+      margin: 0 5px;
+      font-size: 18px;
+  }
+}
+
 
 /*reserv heseg*/
 .banner{
@@ -399,12 +427,30 @@ html {
   background: #fff;
   height: 300px;
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 992px) {
   .card-content{
     background: #fff;
     height: 300px;
-    width: 30%;
-    margin-left: 35%;
+    width: 50%;
+    margin-left: 25%;
+  }
+  .reserv{
+    left: -35%;
+    width: 60%;
+  }
+  .conus{
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 625px) {
+  .card-content{
+    visibility: hidden;
+  }
+  .reserv{
+    visibility: hidden;
+  }
+  .conus{
+    visibility: hidden;
   }
 }
 .card-content h3{
