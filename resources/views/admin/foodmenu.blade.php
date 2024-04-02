@@ -12,22 +12,22 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="title">Title</label>
-                    <input style="background-color: azure;" type="text" name="title" class="form-control" placeholder="Write a title" required>
+                    <label for="title">Нэр</label>
+                    <input style="background-color: azure;" type="text" name="title" class="form-control" placeholder="Хоолны нэр" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="price">Price</label>
-                    <input style="background-color: azure;" type="text" name="price" class="form-control" placeholder="Write a price" required>
+                    <label for="price">Үнэ</label>
+                    <input style="background-color: azure;" type="text" name="price" class="form-control" placeholder="Хоолны үнэ" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="image">Image</label>
+                    <label for="image">Зураг</label>
                     <input style=" background-color: azure; color:black;" type="file" name="image" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary">Хадгалах</button>
                 </div>
             </form>
 
@@ -35,11 +35,11 @@
                 <table class="food-table">
                     <thead>
                         <tr>
-                            <th>Food Name</th>
-                            <th>Price</th>
-                            <th>Image</th>
-                            <th>Action</th>
-                            <th>Action2</th>
+                            <th>Хоолны нэр</th>
+                            <th>Үнэ</th>
+                            <th>Зураг</th>
+                            <th>Үйлдэл</th>
+                            <th>Үйлдэл2</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,8 +48,8 @@
                                 <td>{{ $item->title }}</td>
                                 <td>{{ $item->price }}.000</td>
                                 <td style="width: 200px"><img src="/foodimage/{{ $item->image }}" alt=""></td>
-                                <td><a href="{{ url('/deletemenu', $item->id) }}" class="btn btn-danger">Delete</a></td>
-                                <td><a href="{{ url('/updateview', $item->id) }}" class="btn btn-info">Update</a></td>
+                                <td><a href="{{ url('/deletemenu', $item->id) }}" class="btn btn-danger">Устгах</a></td>
+                                <td><a href="{{ url('/updateview', $item->id) }}" class="btn btn-info">Шинэчлэх</a></td>
                             </tr>
                         @endforeach
                     </tbody>

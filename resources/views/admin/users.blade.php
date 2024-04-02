@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Админ</title>
 
     <!-- Include your CSS files here x slot ni drop down bar -->
     <x-slot name="header">
@@ -73,9 +73,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Action</th>
+                    <th>Нэр</th>
+                    <th>И-Мейл</th>
+                    <th>Үйлдэл</th>
                 </tr>
             </thead>
             <tbody>
@@ -85,9 +85,9 @@
                     <td>{{ $user->email }}</td>
                     <td>
                         @if($user->usertype == "1")
-                        <a href="{{ url('/deleteuser', $user->id) }}" class="btn btn-danger">Delete</a>
+                        <a href="{{ url('/deleteuser', $user->id) }}" class="btn btn-danger">Устгах</a>
                         @else
-                        <span class="text-muted">Not Allowed</span>
+                        <span class="text-muted">Боломжгүй</span>
                         @endif
                     </td>
                 </tr>

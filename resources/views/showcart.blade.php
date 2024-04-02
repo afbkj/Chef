@@ -163,10 +163,10 @@
     <div>
         <table class="cart">
             <tr class="tr1">
-                <th style="padding: 30px;">Action</th>
-                <th style="padding: 30px;">Food</th>
-                <th style="padding: 30px;">Price</th>
-                <th style="padding: 30px;">Quantity</th>
+                <th style="padding: 30px;">Үйлдэл</th>
+                <th style="padding: 30px;">Хоолны нэр</th>
+                <th style="padding: 30px;">Үнэ</th>
+                <th style="padding: 30px;">Тоо ширхэг</th>
             </tr>
 
             <form action="{{url('orderconfirm')}}" method="POST">
@@ -176,7 +176,7 @@
             @foreach($data2 as $index => $item)
 <tr style="position: relative; padding-top: 20px; margin-left: 40px;">
     <td>
-        <a href="{{url('/remove',$item->id)}}" class="btn btn-warning" style="background-color: red; color:white; border-radius: 5px; padding:2px;">Remove</a>
+        <a href="{{url('/remove',$item->id)}}" class="btn btn-warning" style="background-color: red; color:white; border-radius: 5px; padding:2px;">Устгах</a>
     </td>
     @if(isset($data[$index]))
         <td>
@@ -200,19 +200,19 @@
         </table>
 
         <div align="center" style="padding: 10px;">
-            <button style=" background-color: rgba(0, 0, 255, 0.694); font-size:20px; border-radius: 8px; color:white;" type="button" id="order">Order Now</button>
+            <button style=" background-color: rgba(0, 0, 255, 0.694); font-size:20px; border-radius: 8px; color:white;" type="button" id="order">Захиалах</button>
         </div>
 
         <div id="appear" align="center" style="padding: 10px; display:none;">
 
             <div style="padding: 10px;">
-                <label for="">Name</label>
-                <input style=" margin-left:20px;" type="text" name="name" placeholder="Name" id="">
+                <label for="">Нэр</label>
+                <input style=" margin-left:20px;" type="text" name="name" placeholder="Нэр" id="">
             </div>
 
             <div style="padding: 10px;">
-                <label for="">Phone</label>
-                <input style=" margin-left:20px;" type="number" name="phone" placeholder="Phone Number" id="">
+                <label for="">Утас</label>
+                <input style=" margin-left:20px;" type="number" name="phone" placeholder="Утасны дугаар" id="">
             </div>
 
             <!-- <div style="padding: 10px;">
@@ -221,8 +221,8 @@
             </div> -->
 
             <div style="padding: 10px;">
-                <input style=" font-size: 15px; background-color: rgb(10, 173, 10); font-size:20px; border-radius: 8px; color:white;" type="submit" value="Order Confirm" id="">
-                <button style="background-color: red; font-size:20px; border-radius:8px; color:white;" id="close" type="button">Close</button>
+                <input style=" font-size: 15px; background-color: rgb(10, 173, 10); font-size:20px; border-radius: 8px; color:white;" type="submit" value="Захиалгыг баталгаажуулах" id="">
+                <button style="background-color: red; font-size:20px; border-radius:8px; color:white;" id="close" type="button">Хаах</button>
             </div>
 
 

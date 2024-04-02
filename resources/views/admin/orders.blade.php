@@ -8,24 +8,24 @@
         @include("admin.navbar")
 
         <div class="container">
-            <h1 class="page-title">Customer Orders</h1>
+            <h1 class="page-title">Хоолны захиалгууд</h1>
 
             <form action="{{ url('/search') }}" method="get" class="search-form">
                 @csrf
-                <input type="text" name="search" class="search-input" placeholder="Search by name" required>
-                <button type="submit" class="search-button">Search</button>
+                <input type="text" name="search" class="search-input" placeholder="Нэрээр нь хайх" required>
+                <button type="submit" class="search-button">Хайх</button>
             </form>
 
             <table class="orders-table">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Phone</th>
+                        <th>Нэр</th>
+                        <th>Утас</th>
                         <!-- <th>Address</th> -->
-                        <th>Food Name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total Price</th>
+                        <th>Хоолны нэр</th>
+                        <th>Үнэ</th>
+                        <th>Тоо ширхэг</th>
+                        <th>Нийт үнэ</th>
                         <!-- <th>Delete</th> -->
                     </tr>
                 </thead>

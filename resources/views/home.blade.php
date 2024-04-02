@@ -23,22 +23,22 @@
       <ul>
         <li class="menu_items">
           <a href="#">
-            Home
+            Нүүр
           </a>
         </li>
         <li class="menu_items">
           <a href="#menu">
-            Menu
+             Меню
           </a>
         </li>
         <li class="menu_items">
           <a href="{{url('/foodchef')}}">
-            About
+            Бидний тухай
           </a>
         </li>
         <li class="menu_items">
           <a href="#reserv">
-            Reservation
+            Захиалга өгөх
           </a>
         </li>
         <li class="menu_items">
@@ -46,14 +46,14 @@
             @auth
             <a href="{{url('/showcart', Auth::user()->id)}}">
 
-              Cart[{{$count}}]
+              Сагс - {{$count}}
             </a>
 
             @endauth
 
             @guest
 
-            Cart[0]
+            Сагс - 0
 
             @endguest
           </a>

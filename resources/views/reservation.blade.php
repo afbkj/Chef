@@ -2,10 +2,10 @@
   <div class="filter"></div>
   <div class="conus">
     <h3>
-      Contact us
+      Бидэнтэй холбогдох
     </h3>
     <h2>
-      Here You Can Make A Reservation Or Just walkin to our cafe
+      Энэ хэсэгт та урьдчилсан захиалга өгөх боломжтой.
     </h2>
     <h4>
       Энэ хэсэгт урьдчлан ширээ захиалах боломжтой ба дараах зүйлсийг бөглөн ширээгээ захиална уу.
@@ -15,7 +15,7 @@
           <i class="fa-solid fa-phone"></i>
         </div>
         <h3 style="color: black;">
-          Phone Number
+          Утас:
         </h3>
         <h3 style="color: black;">
           99887766
@@ -26,7 +26,7 @@
           <i class="fa-solid fa-envelope"></i>
         </div>
         <h3 style="color: black;">
-          Email
+          Email:
         </h3>
         <h3>
           hello@company.com
@@ -43,7 +43,7 @@
 
 
         <div class="card-content">
-          <h3>Reservation</h3>
+          <h3>Захиалга өгөх</h3>
           <div class="form-row">
             <!-- <select style="color: black; font-size: 10px" name = "days">
                               <option value = "day-select">Select Day</option>
@@ -60,13 +60,13 @@
           </div>
 
           <div class="form-row">
-            <input name="name" id="name" type="text" placeholder="Name">
-            <input name="number" type="text" id="number" placeholder="Phone Number">
+            <input name="name" id="name" type="text" placeholder="Нэр">
+            <input name="number" type="text" id="number" placeholder="Утасны дугаар">
           </div>
 
           <div class="form-row">
-            <input style="height: 30px" type="number" name="guest" placeholder="How Many Person?" min="1">
-            <input type="submit" id="form-submit" value="Book table">
+            <input style="height: 30px" type="number" name="guest" placeholder="Хүний тоо" min="1">
+            <input type="submit" id="form-submit" value="Захиалах">
           </div>
         </div>
       </div>

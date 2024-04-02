@@ -12,22 +12,22 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input style="background-color: azure;" type="text" name="name" class="form-control" placeholder="Enter name" required>
+                    <label for="name">Нэр</label>
+                    <input style="background-color: azure;" type="text" name="name" class="form-control" placeholder="Нэр оруул" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="speciality">Speciality</label>
-                    <input style="background-color: azure;" type="text" name="speciality" class="form-control" placeholder="Enter speciality" required>
+                    <label for="speciality">Төрөл</label>
+                    <input style="background-color: azure;" type="text" name="speciality" class="form-control" placeholder="Хоолны төрөл оруул" required>
                 </div>
 
                 <div class="form-group file-input">
-                    <label for="image">Image</label>
+                    <label for="image">Зураг</label>
                     <input style="color: black; background-color: azure;"  type="file" name="image" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary">Хадгалах</button>
                 </div>
             </form>
 
@@ -35,11 +35,11 @@
                 <table class="chef-table">
                     <thead>
                         <tr>
-                            <th>Chef Name</th>
-                            <th>Speciality</th>
-                            <th>Image</th>
-                            <th>Action</th>
-                            <th>Action2</th>
+                            <th>Тогоочийн нэр</th>
+                            <th>Төрөл</th>
+                            <th>Зураг</th>
+                            <th>Үйлдэл</th>
+                            <th>Үйлдэл2</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,8 +48,8 @@
                                 <td>{{ $chef->name }}</td>
                                 <td>{{ $chef->speciality }}</td>
                                 <td ><img src="/chefimage/{{ $chef->image }}" alt=""></td>
-                                <td><a href="{{ url('/updatechef', $chef->id) }}" class="btn btn-info">Update</a></td>
-                                <td><a href="{{ url('/deletechef', $chef->id) }}" class="btn btn-danger">Delete</a></td>
+                                <td><a href="{{ url('/updatechef', $chef->id) }}" class="btn btn-info">Шинэчлэх</a></td>
+                                <td><a href="{{ url('/deletechef', $chef->id) }}" class="btn btn-danger">Устгах</a></td>
                             </tr>
                         @endforeach
                     </tbody>

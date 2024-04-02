@@ -2,7 +2,7 @@
 
   <div class="container">
     <div class="menu" id="menu">
-      Menu
+      Меню
     </div>
     <form action="{{url('/addcart')}}" method="post">
       <div class="swiper tranding-slider">
@@ -27,7 +27,7 @@
               </div>
               <input type="number" id="quantity" name="quantity" value="1" min="1" style="width:80px;">
               <!-- <input type="submit" value="add cart" style="width:80px; background-color:orange"> -->
-              <button type="submit" style="width: 100px; background-color:orange; color:white; border:20px; border-radius:5px" formaction="{{url('/addcart', $data->id)}}">add cart</button>
+              <button type="submit" style="width: 100px; background-color:orange; color:white; border:20px; border-radius:5px" formaction="{{url('/addcart', $data->id)}}">Сагсанд нэмэх</button>
 
             </div>
 

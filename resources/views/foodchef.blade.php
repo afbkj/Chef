@@ -11,11 +11,25 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background-color: grey;
+            background-image: url('/image/restaurant_1.jpg');
+        }
+
+        .header {
+            background-color: #222222a5;
+            text-align: center;
+            height: 90px;
+            width: 100%;
+            position: absolute;
+        }
+
+        .header img {
+            max-width: 100%;
+            height: 90px;
         }
 
         .parallax {
-            background-image: url('/public/admin/user-image/1.jpg');
+            /* background-image: url('/public/admin/user-image/1.jpg'); */
             min-height: 100vh; /* Change height to min-height */
             background-attachment: fixed;
             background-position: center;
@@ -35,8 +49,11 @@
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
-            max-height: 80vh; /* Adjust the maximum height */
+            max-height: 70vh; /* Adjust the maximum height */
             overflow: auto; 
+            width: 60%;
+            margin-left: 20%;
+            scrollbar-width: none; /* Firefox */
         }
 
         .section-title {
@@ -48,13 +65,14 @@
             display: flex;
             flex-wrap: wrap; /* Allow items to wrap to the next line */
             justify-content: center;
-            gap: 20px;
+            gap: 80px;
             margin-top: 20px;
+            opacity: 0.9;
         }
 
         .chef-card {
             flex: 0 1 calc(50% - 20px); /* Set width for two columns */
-            max-width: 500px; /* Limit the maximum width of each card */
+            max-width: 300px; /* Limit the maximum width of each card */
             background-color: #fff;
             border-radius: 10px;
             overflow: hidden;
@@ -70,7 +88,7 @@
 
         .chef-image img {
             width: 100%;
-            height: 330px; /* Set height of the image */
+            height: 300px; /* Set height of the image */
             object-fit: contain;
             object-position: top;
             border-radius: 10px 10px 0 0;
@@ -114,37 +132,64 @@
                 flex-basis: calc(100% - 20px);
             }
         }
+
+        .footer {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            
+        }
+
+        .footer .icn a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+
+        .footer .icn a:hover {
+            color: orange;
+        }
     </style>
 </head>
 
 <body>
 
+    <div class="header">
+        <a href="/">
+            <img src="/image/Logo1.png" alt="Logo">
+        </a>
+    </div>
+
     <div class="parallax">
-        <div class="container">
-            <section class="chef-section">
-                <h2 class="section-title">Meet Our Chefs</h2>
-                <div class="chef-grid-container">
-                    
-                    @foreach($data2 as $chef)
-                        <div class="chef-card">
-                            <div class="chef-image">
-                                <img src="/chefimage/{{$chef->image}}" alt="{{$chef->name}}" alt="Chef 1">
-                            </div>
-                            <div class="chef-details">
-                                <h3 class="chef-name">Chef {{$chef->name}} </h3>
-                                <p class="chef-description">{{$chef->speciality}} hariutssan togooch</p>
-                                <div class="chef-social-links">
-                                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                                </div>
+    <div class="container">
+        <section class="chef-section" style="overflow: overlay;">
+            <h2 class="section-title">Манай чадварлаг тогоочид</h2>
+            <div class="chef-grid-container">
+                
+                @foreach($data2 as $chef)
+                    <div class="chef-card">
+                        <div class="chef-image">
+                            <img src="/chefimage/{{$chef->image}}" alt="{{$chef->name}}" alt="Chef 1">
+                        </div>
+                        <div class="chef-details">
+                            <h3 class="chef-name">Тогооч {{$chef->name}} </h3>
+                            <p class="chef-description">{{$chef->speciality}} хариуцсан тогооч</p>
+                            <div class="chef-social-links">
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
-                    @endforeach
-                </div>
-            </section>
-        </div>
+                    </div>
+                @endforeach
+            </div>
+        </section>
     </div>
+</div>
+
 
     <script src="script.js"></script>
     <script>

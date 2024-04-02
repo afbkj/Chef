@@ -8,17 +8,17 @@
         @include("admin.navbar")
 
         <div class="content-wrapper">
-            <h1 class="page-title">Reservation Details</h1>
+            <h1 class="page-title">Захиалгын мэдээлэл</h1>
 
             <div class="table-container">
                 <table class="reservation-table">
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Name</th>
-                            <th>Number</th>
-                            <th>Guests</th>
+                            <th>Өдөр</th>
+                            <th>Цаг</th>
+                            <th>Нэр</th>
+                            <th>Дугаар</th>
+                            <th>Хүний тоо</th>
                         </tr>
                     </thead>
                     <tbody>
