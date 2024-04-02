@@ -11,6 +11,13 @@
             <h1 class="page-title">Захиалгын мэдээлэл</h1>
 
             <div class="table-container">
+                <!-- Display flash message if it exists -->
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show mt-3" id="success-alert" role="alert">
+                        <strong>Success!</strong> {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
                 <table class="reservation-table">
                     <thead>
                         <tr>
@@ -19,6 +26,7 @@
                             <th>Нэр</th>
                             <th>Дугаар</th>
                             <th>Хүний тоо</th>
+                            <th>Үйлдэл</th> <!-- Add Delete column header -->
                         </tr>
                     </thead>
                     <tbody>
@@ -29,6 +37,14 @@
                                 <td>{{ $reservation->name }}</td>
                                 <td>{{ $reservation->number }}</td>
                                 <td>{{ $reservation->guest }}</td>
+                                <td>
+                                    <!-- Add a delete button -->
+                                    <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Устгах</button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -41,6 +57,13 @@
     <x-slot name="footer">
         @include("admin.adminscript")
     </x-slot>
+
+    <script>
+        // Hide success alert after 3 seconds
+        setTimeout(function() {
+            document.getElementById('success-alert').style.display = 'none';
+        }, 3000);
+    </script>
 
     <style>
         body {

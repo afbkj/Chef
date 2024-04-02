@@ -9,9 +9,13 @@ class OrderController extends Controller
 {
     public function destroy($id)
     {
-        // Logic to delete the order with the given ID
         $order = Order::findOrFail($id);
         $order->delete();
-        return redirect()->back()->with('success', 'Order deleted successfully');
+    
+        // Flash a success message
+        session()->flash('success', 'Order deleted successfully');
+    
+        return redirect()->back();
     }
+    
 }

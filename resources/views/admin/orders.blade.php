@@ -16,6 +16,14 @@
                 <button type="submit" class="search-button">Хайх</button>
             </form>
 
+            <!-- Display flash message if it exists -->
+            @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show mt-3" id="success-alert" role="alert">
+                <strong>Success!</strong> {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+
             <table class="orders-table">
                 <thead>
                     <tr>
@@ -26,7 +34,7 @@
                         <th>Үнэ</th>
                         <th>Тоо ширхэг</th>
                         <th>Нийт үнэ</th>
-                        <th>Delete</th> <!-- Added Delete column -->
+                        <th>Үйлдэл</th> <!-- Added Delete column -->
                     </tr>
                 </thead>
                 <tbody>
@@ -53,12 +61,21 @@
                     @endforeach
                 </tbody>
             </table>
+
+
         </div>
     </div>
 
     <x-slot name="footer">
         @include("admin.adminscript")
     </x-slot>
+
+    <script>
+        // Hide success alert after 3 seconds
+        setTimeout(function() {
+            document.getElementById('success-alert').style.display = 'none';
+        }, 3000);
+    </script>
 
     <style>
         /* Styles for the table and form */
