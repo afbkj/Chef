@@ -26,7 +26,7 @@
                         <th>Үнэ</th>
                         <th>Тоо ширхэг</th>
                         <th>Нийт үнэ</th>
-                        <!-- <th>Delete</th> -->
+                        <th>Delete</th> <!-- Added Delete column -->
                     </tr>
                 </thead>
                 <tbody>
@@ -39,6 +39,16 @@
                         <td>{{ $order->price }}.000</td>
                         <td>{{ $order->quantity }}</td>
                         <td>{{ $order->price * $order->quantity }}.000</td>
+                        <!-- Delete button -->
+                        <td>
+                            <form action="{{ route('orders.destroy', $order->id) }}" method="POST">
+
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Устгах</button>
+                            </form>
+                        </td>
+
                     </tr>
                     @endforeach
                 </tbody>
@@ -51,6 +61,7 @@
     </x-slot>
 
     <style>
+        /* Styles for the table and form */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f8f9fa;
@@ -58,7 +69,6 @@
             padding: 0;
             color: #212529;
         }
-
 
         .container {
             padding: 20px;
@@ -112,8 +122,29 @@
         tbody tr:hover {
             background-color: #f5f5f5;
         }
-        .search-button:hover{
+
+        .search-button:hover {
             opacity: 70%;
+        }
+
+        /* Additional style for delete button */
+        td form {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+
+        td form button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        td form button:hover {
+            opacity: 0.7;
         }
     </style>
 

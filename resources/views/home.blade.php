@@ -42,7 +42,7 @@
           </a>
         </li>
         <li class="menu_items">
-          <a href="register">
+          <a href="login">
             @auth
             <a href="{{url('/showcart', Auth::user()->id)}}">
 
@@ -74,7 +74,7 @@
         </li>
 
         <li>
-          <a href="{{route('register')}}"></a>
+          <a href="{{route('login')}}"></a>
         </li>
         @endauth
 
@@ -88,7 +88,7 @@
   </div>
   <div class="body">
     <div id="first_video">
-      <a href="register">
+      <a href="login">
         <video src="vid/sign1.mp4" class="log" autoplay loop muted>
 
         </video>

@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Livewire\Admin\AdminAddCouponComponent;
 use App\Livewire\Admin\AdminCouponsComponent;
 use App\Livewire\Admin\AdminEditCouponComponent;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +85,11 @@ Route::get("/search", [AdminController::class, "search"]);
 
 Route::post('/coupon', 'CouponsController@store')->name('coupon.store');
 Route::delete('/coupon', 'CouponsController@destroy')->name('coupon.destroy');
+
+Route::delete('/deleteorder/{id}', [OrderController::class, 'destroy'])->name('orders.destroy');
+
+
+
 
 // Route::get("/admin/coupons", AdminCouponsComponent::class)->name("admin.coupons");
 // Route::get("/admin/coupon/add", AdminAddCouponComponent::class)->name("admin.addcoupon");
