@@ -102,29 +102,28 @@
 
 <body>
 <x-app-layout>
+    
 
-    <div>
-            <table class="cart">
-                <tr class="tr1">
-                    <th style="padding: 30px;">Хоолны нэр</th>
-                    <th style="padding: 30px;">Үнэ</th>
-                    <th style="padding: 30px;">Тоо ширхэг</th>
-                    <th style="padding: 30px;">Захиалсан Өдөр</th>
-                </tr>
+<div>
+    <table class="cart">
+        <tr class="tr1">
+            <th style="padding: 30px;">Хоолны нэр</th>
+            <th style="padding: 30px;">Үнэ</th>
+            <th style="padding: 30px;">Тоо ширхэг</th>
+            <th style="padding: 30px;">Захиалсан Өдөр</th>
+        </tr>
 
-                <div style="display: flex;">
-                    @foreach($orders as  $item)
-                        <tr style="position: relative; padding-top: 20px; margin-left: 40px;">
-                                <td>{{$item->foodname}}</td>
-                            <td>{{$item->price}}</td>
-                            <td>{{$item->quantity}}</td>
-                            <td>{{$item->created_at}}</td>
+        @foreach($orders as  $item)
+            <tr style="position: relative; padding-top: 20px; margin-left: 40px;">
+                <td>{{$item->foodname}}</td>
+                <td>{{$item->price}}</td>
+                <td>{{$item->quantity}}</td>
+                <td>{{ \Carbon\Carbon::parse($item->created_at)->setTimezone('Asia/Ulaanbaatar')->format('Y-m-d H:i:s') }}</td>
+            </tr>
+        @endforeach
+    </table>
+</div>
 
-                        </tr>
-                    @endforeach
-                </div>
-            </table>
-    </div>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

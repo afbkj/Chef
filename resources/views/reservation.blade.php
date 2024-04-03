@@ -45,29 +45,43 @@
         <div class="card-content">
           <h3>Захиалга өгөх</h3>
           <div class="form-row">
-            <!-- <select style="color: black; font-size: 10px" name = "days">
-                              <option value = "day-select">Select Day</option>
-                              <option value = "sunday">Sunday</option>
-                              <option value = "monday">Monday</option>
-                              <option value = "tuesday">Tuesday</option>
-                              <option value = "wednesday">Wednesday</option>
-                              <option value = "thursday">Thursday</option>
-                              <option value = "friday">Friday</option>
-                              <option value = "saturday">Saturday</option>
-                          </select> -->
-            <input style="color:black" name="date" id="date" type="date" class="form-control" placeholder="dd/mm/yyyy">
-            <input type="time" name="time" style="color: black; font-size: 10px">
-          </div>
+    <input style="color:black" name="date" id="date" type="date" class="form-control" placeholder="dd/mm/yyyy">
+    <input type="time" name="time" id="time" style="color: black; font-size: 10px">
+</div>
 
-          <div class="form-row">
-            <input name="name" id="name" type="text" placeholder="Нэр">
-            <input name="number" type="text" id="number" placeholder="Утасны дугаар">
-          </div>
+<div class="form-row">
+    <input name="name" id="name" type="text" placeholder="Нэр">
+    <input name="number" type="text" id="number" placeholder="Утасны дугаар">
+</div>
 
-          <div class="form-row">
-            <input style="height: 30px" type="number" name="guest" placeholder="Хүний тоо" min="1">
-            <input type="submit" id="form-submit" value="Захиалах">
-          </div>
+<div class="form-row">
+    <input style="height: 30px" type="number" name="guest" placeholder="Хүний тоо" min="1" max="50">
+    <input type="submit" id="form-submit" value="Захиалах">
+</div>
+
+<script>
+    // Get the date and time input fields
+    var dateInput = document.getElementById('date');
+    var timeInput = document.getElementById('time');
+
+    // Get the current date and time
+    var currentDate = new Date();
+
+    // Add 5 hours to the current date
+    var minDateTime = new Date(currentDate.getTime() + 5 * 60 * 60 * 1000);
+
+    // Format the minimum date and time as YYYY-MM-DD and HH:MM respectively
+    var minDateString = minDateTime.toISOString().split('T')[0];
+    var minTimeString = ('0' + minDateTime.getHours()).slice(-2) + ':' + ('0' + minDateTime.getMinutes()).slice(-2);
+
+    // Set the minimum date and time to 5 hours from the current date
+    dateInput.min = minDateString;
+    timeInput.min = minTimeString;
+</script>
+
+
+
+          
         </div>
       </div>
     </section>
