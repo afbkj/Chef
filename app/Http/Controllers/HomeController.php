@@ -9,150 +9,166 @@ use App\Models\User;
 use App\Models\Food;
 use App\Models\Foodchef;
 use App\Models\Cart;
+use App\Models\Coupon;
 use App\Models\Order;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
-        if(Auth::id()){
+        if (Auth::id()) {
             return redirect('redirects');
-        }else
+        } else
 
-        $data = food::all();
-        $count = cart ::count();
+            $data = Food::all();
+        $count = Cart::count();
 
         $data2 = foodchef::all();
-        return view("home", compact("data","data2", 'count'));
-        
+        return view("home", compact("data", "data2", 'count'));
+
 
     }
 
-    public function foodchef(){
-        
+    public function foodchef()
+    {
+
         $data2 = foodchef::all();
         return view("foodchef", compact("data2"));
     }
 
-    public function redirects(){
+    public function redirects()
+    {
         $data = food::all();
         $data2 = foodchef::all();
-        $data3=user::all();
-        $usertype= Auth::user()->usertype;
+        $data3 = user::all();
+        $usertype = Auth::user()->usertype;
 
-        if($usertype == '2'){
+        if ($usertype == '2') {
             return view('admin.users', compact("data3"));
-        }
-        else{
-            $user_id =Auth::id();
-            $count=cart::where('user_id',$user_id)->count();
-            return view('home', compact('data','data2','count'));
+        } else {
+            $user_id = Auth::id();
+            $count = cart::where('user_id', $user_id)->count();
+            return view('home', compact('data', 'data2', 'count'));
         }
     }
 
 
-    public function addcart(Request $request, $id){
+    public function addcart(Request $request, $id)
+    {
 
-        if(Auth::id()){
-            $user_id =Auth::id();
-            $foodid=$id;
-            $quantity=$request->quantity;
+        if (Auth::id()) {
+            $user_id = Auth::id();
+            $foodid = $id;
+            $food = Food::findOrFail($foodid);
+            $quantity = $request->quantity;
 
-            $cart=new cart;
-            $cart->user_id=$user_id;
-            $cart->food_id=$foodid;
-            $cart->quantity=$quantity;
-            $cart->save();
-
-
-            return redirect()->back();
-        }
-        else{
+            if ($food)
+            {
+                $cart = new Cart();
+                $cart->user_id = $user_id;
+                $cart->food_id = $food->id;
+                $cart->quantity = $quantity;
+                $cart->save();
+            }
+            else
+            {
+                return redirect('/');
+            }
+            return redirect()->route('show.cart',['id' => Auth::user()->id]);
+        } else {
             return redirect('/login');
         }
     }
 
-    public function showcart(Request $request, $id){
+    public function showcart(Request $request, $id)
+    {
+        $count = Cart::where('user_id', $id)->count();
 
-        $count=cart::where('user_id', $id)->count();
+        if (Auth::id() == $id) {
+            $data2 = Cart::where('user_id', $id)->get();
 
-        if(Auth::id()==$id){
-            
+            $data = Cart::where('user_id', $id)
+                ->join('foods', 'carts.food_id', '=', 'foods.id')
+                ->get();
 
-        $data2=cart::select('*')->where('user_id','=', $id)->get();
-        $data=cart::where('user_id', $id)->join('food', 'carts.food_id', '=', 'food.id')->get();
-
-        return view('showcart', compact('count','data','data2'));
-    }else{
-        return redirect()->back();
+            return view('showcart', compact('count', 'data', 'data2'));
+        } else {
+            return redirect()->back();
+        }
     }
-    
-}
 
-    public function remove($id){
-        $data=cart::find($id);
+    public function showorder()
+    {
+        $user = Auth::user();
+        $orders = $user->orders;
+
+        return view('showorder', compact('orders'));
+    }
+
+
+    public function remove($id)
+    {
+        $data = Cart::find($id);
 
         $data->delete();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
         return redirect()->back();
     }
 
-    public function orderconfirm(Request $request){
-        foreach($request->foodname as $key => $foodname){
-            $data = new order;
+    public function orderconfirm(Request $request)
+    {
+        $rules = [
+            'foodname.*' => 'required|string',
+            'quantity.*' => 'numeric|max:100',
+            'phone' => 'required|digits:8',
+        ];
 
-            $data->foodname=$foodname;
-            $data->price=$request->price[$key];
-            $data->quantity=$request->quantity[$key];
-            $data->name=$request->name;
-            $data->phone=$request->phone;
-            $data->address=$request->address;
+        $messages = [
+            'quantity.*.max' => 'Уучлаарай та 100 гаас их тоо хэмжээтэй хоол захиалах боломжгүй',
+            'phone.digits' => 'Утасны дугаар 8 оронтой байх ёстой',
+        ];
 
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        foreach ($request->foodname as $key => $foodname) {
+            $data = new Order;
+
+            $finalPrice = $request->price[$key];
+
+            if ($request->has('coupon_code') && !empty($request->coupon_code)) {
+                $coupon = Coupon::where('code', $request->coupon_code)->first();
+                if ($coupon) {
+                    $originalPrice = $request->price[$key];
+                    $discountAmount = $coupon->value;
+                    $finalPrice = $originalPrice - $discountAmount;
+                    $finalPrice = max(0, $finalPrice);
+                }
+            }
+
+            $data->foodname = $foodname;
+            $data->price = $finalPrice;
+            $data->quantity = $request->quantity[$key];
+            $data->name = $request->name;
+            $data->phone = $request->phone;
+            $data->address = $request->address;
+            $data->user_id = Auth::user()->id;
             $data->save();
         }
-        return redirect()->back();
+
+        Auth::user()->carts()->delete();
+
+        return redirect()->back()->with('message' , 'Амжилттай захиалагдлаа');
     }
 
 
-    public function log(){
+    public function log()
+    {
         return view("login");
     }
 }

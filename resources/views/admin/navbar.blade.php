@@ -45,5 +45,14 @@
                 <span class="menu-title">Хоол захиалга</span>
             </a>
         </li>
+
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('admin.coupon')}}">
+              <span class="menu-icon">
+                <i style="width: 25px; height:20px"><img src="image/coupon.png" alt=""></i>
+              </span>
+              <span class="menu-title">Купон</span>
+            </a>
+          </li>
     </ul>
 </nav>

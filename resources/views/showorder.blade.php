@@ -102,106 +102,29 @@
 
 <body>
 <x-app-layout>
-    @auth
-        <a href="{{url('/showcart', Auth::user()->id)}}">
-            Cart[{{$count}}]
-        </a>
-    @endauth
 
     <div>
-        @if ($errors->any())
-            <div class="alert alert-warning">
-                @foreach ($errors->all() as $error)
-                    <div>{{ $error }}</div>
-                @endforeach
-            </div>
-        @endif
-
-        <form action="{{url('orderconfirm')}}" method="POST">
-            @csrf
             <table class="cart">
                 <tr class="tr1">
                     <th style="padding: 30px;">Хоолны нэр</th>
                     <th style="padding: 30px;">Үнэ</th>
                     <th style="padding: 30px;">Тоо ширхэг</th>
-                    <th style="padding: 30px;">Үйлдэл</th>
+                    <th style="padding: 30px;">Захиалсан Өдөр</th>
                 </tr>
 
                 <div style="display: flex;">
-                    @foreach($data2 as $index => $item)
+                    @foreach($orders as  $item)
                         <tr style="position: relative; padding-top: 20px; margin-left: 40px;">
-                            @if(isset($data[$index]))
-                                <td>
-                                    <input type="text" name="foodname[]" value="{{$data[$index]->title}}"
-                                           hidden="">
-                                    {{$data[$index]->title}}
-                                </td>
-                                <td>
-                                    <input type="text" name="price[]" value="{{$data[$index]->price}}"
-                                           hidden="">
-                                    {{$data[$index]->price}}₮
-                                </td>
-                                <td>
-                                    <input type="text" name="quantity[]" value="{{$data[$index]->quantity}}"
-                                           hidden="">
-                                    {{$data[$index]->quantity}}
-                                </td>
-                                <td>
-                                    <a href="{{url('/remove',$item->id)}}" class="btn btn-warning"
-                                       style="background-color: red; color:white; border-radius: 5px; padding:2px;">Устгах</a>
-                                </td>
-                            @endif
+                                <td>{{$item->foodname}}</td>
+                            <td>{{$item->price}}</td>
+                            <td>{{$item->quantity}}</td>
+                            <td>{{$item->created_at}}</td>
+
                         </tr>
                     @endforeach
                 </div>
             </table>
-
-            <div align="center" style="padding: 10px;">
-                <button style=" background-color: rgba(0, 0, 255, 0.694); font-size:20px; border-radius: 8px; color:white;"
-                        type="button" id="order">Захиалах
-                </button>
-            </div>
-
-            <div id="appear" align="center" style="padding: 10px; display:none;">
-                <div style="padding: 10px;">
-                    <label for="">Name</label>
-                    <input style=" margin-left:20px;" type="text" name="name" placeholder="Name" id="">
-                </div>
-
-                <div style="padding: 10px;">
-                    <label for="">Phone</label>
-                    <input style=" margin-left:20px;" type="number" name="phone" placeholder="Phone Number" id="">
-                </div>
-
-                <div style="padding: 10px;">
-                    <label for="">Coupon Code</label>
-                    <input type="text" name="coupon_code" placeholder="Coupon" id="">
-                </div>
-
-                <div style="padding: 10px;">
-                    <input style=" font-size: 15px; background-color: rgb(10, 173, 10); font-size:20px; border-radius: 8px; color:white;"
-                           type="submit" value="Order Confirm" id="">
-                    <button style="background-color: red; font-size:20px; border-radius:8px; color:white;"
-                            id="close" type="button">Close
-                    </button>
-                </div>
-            </div>
-        </form>
     </div>
-
-    <script type="text/javascript">
-        $("#order").click(
-            function () {
-                $("#appear").show();
-            }
-        );
-
-        $("#close").click(
-            function () {
-                $("#appear").hide();
-            }
-        );
-    </script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

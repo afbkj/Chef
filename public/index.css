@@ -400,7 +400,7 @@ html {
 }
 
 /* Responsive adjustments */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 515px) {
   .footer .icn a {
       margin: 0 5px;
       font-size: 18px;
@@ -442,7 +442,7 @@ html {
     visibility: hidden;
   }
 }
-@media screen and (max-width: 625px) {
+@media screen and (max-width: 500px) {
   .card-content{
     visibility: hidden;
   }

@@ -13,12 +13,15 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->string('foodname')->nullable();
-            $table->string('price')->nullable();;
-            $table->string('quantity')->nullable();;
-            $table->string('name')->nullable();;
-            $table->string('phone')->nullable();;
-            $table->string('address')->nullable();;
+            $table->string('price')->nullable();
+            $table->string('quantity')->nullable();
+            $table->string('name')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
             $table->timestamps();
         });
     }

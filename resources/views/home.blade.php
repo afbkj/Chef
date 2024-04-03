@@ -41,7 +41,8 @@
             Захиалга өгөх
           </a>
         </li>
-        <li class="menu_items">
+
+          <li class="menu_items">
           <a href="login">
             @auth
             <a href="{{url('/showcart', Auth::user()->id)}}">
@@ -58,6 +59,15 @@
             @endguest
           </a>
         </li>
+
+          @if(Auth::user())
+              <li class="menu_items">
+                      <a href="{{url('/show-orders')}}">
+                          Захиалгууд
+                      </a>
+              </li>
+          @endif
+
 
         <li class="menu_items" style="margin-left: -15%;">
 

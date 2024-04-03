@@ -8,28 +8,6 @@
         @include("admin.navbar")
 
         <div class="content-wrapper">
-            <form action="{{ url('/uploadfood') }}" method="post" class="food-form" enctype="multipart/form-data">
-                @csrf
-
-                <div class="form-group">
-                    <label for="title">Нэр</label>
-                    <input style="background-color: azure;" type="text" name="title" class="form-control" placeholder="Хоолны нэр" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="price">Үнэ</label>
-                    <input style="background-color: azure;" type="text" name="price" class="form-control" placeholder="Хоолны үнэ" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="image">Зураг</label>
-                    <input style=" background-color: azure; color:black;" type="file" name="image" class="form-control" required>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Хадгалах</button>
-                </div>
-            </form>
 
             <div class="table-container">
                 <table class="food-table">
@@ -43,15 +21,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($data as $item)
-                            <tr align="center">
-                                <td>{{ $item->title }}</td>
-                                <td>{{ $item->price }}</td>
-                                <td style="width: 200px"><img src="/foodimage/{{ $item->image }}" alt=""></td>
-                                <td><a href="{{ url('/deletemenu', $item->id) }}" class="btn btn-danger">Устгах</a></td>
-                                <td><a href="{{ url('/updateview', $item->id) }}" class="btn btn-info">Шинэчлэх</a></td>
-                            </tr>
-                        @endforeach
+                    @foreach($coupons as $data)
+                <tr>
+                    <td>{{ $data->code }}</td>
+                    <td>{{ $data->value }}</td>
+                    <td>{{ $data->created_at }}</td>
+                    <td>{{ $data->updated_at }}</td>
+                    <td>
+                        <a href="{{ url('coupon/edit', $data->id) }}">Edit</a>
+                        <a href="{{ url('coupon/delete', $data->id) }}">Delete</a>
+                    </td>
+                </tr>
+            @endforeach
                     </tbody>
                 </table>
             </div>

@@ -11,17 +11,8 @@ use App\Livewire\Admin\AdminCouponsComponent;
 use App\Livewire\Admin\AdminEditCouponComponent;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReservationsController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -72,7 +63,8 @@ Route::get("/deletechef/{id}", [AdminController::class, "deletechef"]);
 
 Route::post("/addcart/{id}", [HomeController::class, "addcart"]);
 
-Route::get("/showcart/{id}", [HomeController::class, "showcart"]);
+Route::get("/showcart/{id}", [HomeController::class, "showcart"])->name('show.cart');
+Route::get('/show-orders', [HomeController::class,'showorder']);
 
 Route::get("/foodchef", [HomeController::class, "foodchef"]);
 
@@ -90,6 +82,20 @@ Route::delete('/coupon', 'CouponsController@destroy')->name('coupon.destroy');
 Route::delete('/deleteorder/{id}', [OrderController::class, 'destroy'])->name('orders.destroy');
 
 Route::delete('/reservations/{id}', [ReservationsController::class, 'destroy'])->name('reservations.destroy');
+
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+
+Route::controller(\App\Http\Controllers\CouponController::class)->group(function() {
+    Route::get('coupon', 'index')->name('admin.coupon');
+    Route::get('coupon/create', 'create')->name('admin.coupon-create');
+    Route::post('coupon', 'store')->name('admin.coupon-insert');
+    Route::get('coupon/edit/{id}', 'edit');
+    Route::put('coupon/{id}', 'update')->name('admin.coupon-update');
+    Route::get('coupon/delete/{id}', 'destroy');
+});
+
 
 
 
