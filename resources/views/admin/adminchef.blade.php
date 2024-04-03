@@ -8,6 +8,16 @@
         @include("admin.navbar")
 
         <div class="content-wrapper">
+            <!-- JavaScript function to display success notification -->
+            <script>
+                function showSuccessNotification() {
+                    alert('Deleted successfully');
+                }
+                function showSuccessNotification1() {
+                    alert('Saved successfully');
+                }
+            </script>
+
             <form action="{{ url('/uploadchef') }}" method="post" enctype="multipart/form-data" class="chef-form">
                 @csrf
 
@@ -27,7 +37,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Хадгалах</button>
+                    <button type="submit" class="btn btn-primary" onclick="showSuccessNotification1()" >Save</button>
                 </div>
             </form>
 
@@ -49,7 +59,8 @@
                                 <td>{{ $chef->speciality }}</td>
                                 <td ><img src="/chefimage/{{ $chef->image }}" alt=""></td>
                                 <td><a href="{{ url('/updatechef', $chef->id) }}" class="btn btn-info">Шинэчлэх</a></td>
-                                <td><a href="{{ url('/deletechef', $chef->id) }}" class="btn btn-danger">Устгах</a></td>
+                                <!-- Attach JavaScript function to the delete button -->
+                                <td><a href="{{ url('/deletechef', $chef->id) }}" class="btn btn-danger" onclick="showSuccessNotification()">Устгах</a></td>
                             </tr>
                         @endforeach
                     </tbody>
