@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <x-slot name="header">
+<x-slot name="header">
         @include("admin.admincss")
     </x-slot>
 
@@ -9,33 +9,39 @@
 
         <div class="content-wrapper">
 
+                    <!-- Add button -->
+                    <div class="add-button">
+                <a href="{{ url('coupon/create') }}" class="btn btn-primary">Add New Coupon</a>
+            </div>
             <div class="table-container">
                 <table class="food-table">
                     <thead>
                         <tr>
-                            <th>Хоолны нэр</th>
+                            <th>Купоны нэр</th>
                             <th>Үнэ</th>
-                            <th>Зураг</th>
+                            <th>Үүссэн өдөр</th>
+                            <th>Дуусах өдөр</th>
                             <th>Үйлдэл</th>
-                            <th>Үйлдэл2</th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($coupons as $data)
-                <tr>
-                    <td>{{ $data->code }}</td>
-                    <td>{{ $data->value }}</td>
-                    <td>{{ $data->created_at }}</td>
-                    <td>{{ $data->updated_at }}</td>
-                    <td>
-                        <a href="{{ url('coupon/edit', $data->id) }}">Edit</a>
-                        <a href="{{ url('coupon/delete', $data->id) }}">Delete</a>
-                    </td>
-                </tr>
-            @endforeach
+                        @foreach($coupons as $data)
+                        <tr>
+                            <td>{{ $data->code }}</td>
+                            <td>{{ $data->value }}</td>
+                            <td>{{ $data->created_at }}</td>
+                            <td>{{ $data->created_at->addDays(7) }}</td>
+                            <td>
+                                <a href="{{ url('coupon/edit', $data->id) }}">Edit</a>
+                                <a href="{{ url('coupon/delete', $data->id) }}">Delete</a>
+                            </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
+
+
 
         </div>
     </div>
@@ -52,6 +58,33 @@
             padding: 0;
         }
 
+        /* Add button styling */
+        .add-button {
+            text-align: center;
+            margin-top: 20px;
+            width: 300px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border: 2px solid #007bff;
+            padding: 5px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        
         .container-scroller {
             margin-right: -150px;
         }
