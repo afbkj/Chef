@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.min.css">
 <div class="contact">
   <div class="filter"></div>
   <div class="conus">
@@ -78,6 +79,7 @@
     dateInput.min = minDateString;
     timeInput.min = minTimeString;
 </script>
+<script  src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js"></script>
 
 
 
@@ -86,6 +88,8 @@
       </div>
     </section>
   </form>
+
+  
 
   <img src="image/bg.jpg" alt="" class="bg">
 </div>

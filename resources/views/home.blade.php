@@ -28,7 +28,7 @@
         </li>
         <li class="menu_items">
           <a href="#menu">
-             Меню
+             Хоолны цэс
           </a>
         </li>
         <li class="menu_items">

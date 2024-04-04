@@ -132,7 +132,7 @@
                             </div>
                             <div class="chef-details">
                                 <h3 class="chef-name">Chef {{$chef->name}} </h3>
-                                <p class="chef-description">{{$chef->speciality}} hariutssan togooch</p>
+                                <p class="chef-description">{{$chef->speciality}} хариуцсан тогооч</p>
                                 <div class="chef-social-links">
                                     <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                                     <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>

@@ -166,7 +166,7 @@
     <div class="parallax">
     <div class="container">
         <section class="chef-section" style="overflow: overlay;">
-            <h2 class="section-title">Манай чадварлаг тогоочид</h2>
+            <h2 class="section-title">Манай чадварлаг тогооч нар</h2>
             <div class="chef-grid-container">
                 
                 @foreach($data2 as $chef)

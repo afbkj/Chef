@@ -2,7 +2,7 @@
 
     <div class="container">
         <div class="menu" id="menu">
-            Меню
+            Хоолны цэс
         </div>
 
 

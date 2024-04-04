@@ -18,7 +18,7 @@
                 <span class="menu-icon">
                     <i class="mdi mdi-playlist-play"></i>
                 </span>
-                <span class="menu-title">Хоолны меню</span>
+                <span class="menu-title">Хоолны цэс</span>
             </a>
         </li>
         <li class="nav-item menu-items">
@@ -26,7 +26,7 @@
                 <span class="menu-icon">
                     <i class="mdi mdi-chef-hat"></i>
                 </span>
-                <span class="menu-title">Тогоочид</span>
+                <span class="menu-title">Тогооч</span>
             </a>
         </li>
         <li class="nav-item menu-items">
