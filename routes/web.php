@@ -64,7 +64,7 @@ Route::get("/deletechef/{id}", [AdminController::class, "deletechef"]);
 Route::post("/addcart/{id}", [HomeController::class, "addcart"]);
 
 Route::get("/showcart/{id}", [HomeController::class, "showcart"])->name('show.cart');
-Route::get('/show-orders', [HomeController::class,'showorder']);
+Route::get('/show-orders', [HomeController::class,'showorder'])->name('showorder');;
 
 Route::get("/foodchef", [HomeController::class, "foodchef"]);
 

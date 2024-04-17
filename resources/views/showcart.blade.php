@@ -180,7 +180,7 @@
 
                 <div style="padding: 10px;">
                     <input style=" font-size: 15px; background-color: rgb(10, 173, 10); font-size:20px; border-radius: 8px; color:white;"
-                           type="submit" value="Order Confirm" id="">
+                           type="submit" value="Order Confirm" id="orderconfirm">
                     <button style="background-color: red; font-size:20px; border-radius:8px; color:white;"
                             id="close" type="button">Close
                     </button>
@@ -201,6 +201,12 @@
                 $("#appear").hide();
             }
         );
+
+        $("#orderconfirm").click(function () {
+            // Redirect using JavaScript to the 'showorder' route
+            window.location.href = '/showorder';
+        });
+
     </script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -214,15 +220,18 @@
 
     @if(Session::has('message'))
         <script>
-            console.log('Blaim be ahah')
+            // console.log('Blaim be ahah')
 
             Swal.fire({
                 title: "Message",
                 text: "{{ Session::get('message') }}",
                 icon: 'success',
                 timer: 3000,
-                showConfirmButton: false
-            });
+                // showConfirmButton: false
+            }).then((result) => {
+            // Redirect to another page after the alert is closed
+            window.location.href = "{{ route('showorder') }}"; // Change 'showorder' to your actual route name
+        });
         </script>
     @endif
 </x-app-layout>
