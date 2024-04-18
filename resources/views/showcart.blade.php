@@ -23,6 +23,8 @@
             padding: 0;
         }
 
+        
+
         table.cart {
             width: 80%;
             margin: auto;
@@ -71,7 +73,6 @@
         #appear {
             padding: 20px;
             display: none;
-            text-align: center;
         }
 
         #appear label {
@@ -165,12 +166,12 @@
             <div id="appear" align="center" style="padding: 10px; display:none;">
                 <div style="padding: 10px;">
                     <label for="">Name</label>
-                    <input style=" margin-left:20px;" type="text" name="name" placeholder="Name" id="">
+                    <input style=" margin-left:20px;" type="text" name="name" placeholder="Name" id="" required>
                 </div>
 
                 <div style="padding: 10px;">
                     <label for="">Phone</label>
-                    <input style=" margin-left:20px;" type="number" name="phone" placeholder="Phone Number" id="">
+                    <input style=" margin-left:20px;" type="number" name="phone" placeholder="Phone Number" id="phnnum">
                 </div>
 
                 <div style="padding: 10px;">
@@ -190,22 +191,33 @@
     </div>
 
     <script type="text/javascript">
-        $("#order").click(
-            function () {
+        $(document).ready(function () {
+            $("#order").click(function () {
                 $("#appear").show();
-            }
-        );
+            });
 
-        $("#close").click(
-            function () {
+            $("#close").click(function () {
                 $("#appear").hide();
-            }
-        );
+            });
 
-        $("#orderconfirm").click(function () {
-            // Redirect using JavaScript to the 'showorder' route
-            window.location.href = '/showorder';
+            // Mongolian phone number validation
+            const phoneNumberRegex = /^(?:\+976)?\s?(?!.*(\d{2})\1)[89]\d{7}$/;
+
+            function validateMongolianPhoneNumber(phoneNumber) {
+                return phoneNumberRegex.test(phoneNumber);
+            }
+
+            $("#orderconfirm").click(function () {
+                const phoneNumber = $("#phnnum").val();
+                if (!validateMongolianPhoneNumber(phoneNumber)) {
+                    alert("Буруу дугаар оруулсан байна.");
+                    return false; // Prevent form submission
+                }
+                // Redirect using JavaScript to the 'showorder' route
+                // window.location.href = '/showorder';
+            });
         });
+        
 
     </script>
 
@@ -226,6 +238,7 @@
                 title: "Message",
                 text: "{{ Session::get('message') }}",
                 icon: 'success',
+
                 timer: 3000,
                 // showConfirmButton: false
             }).then((result) => {

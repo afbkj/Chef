@@ -122,12 +122,12 @@ class HomeController extends Controller
     {
         $rules = [
             'foodname.*' => 'required|string',
-            'quantity.*' => 'numeric|max:100',
+            'quantity.*' => 'numeric|max:10',
             'phone' => 'required|digits:8',
         ];
 
         $messages = [
-            'quantity.*.max' => 'Уучлаарай та 100 гаас их тоо хэмжээтэй хоол захиалах боломжгүй',
+            'quantity.*.max' => 'Уучлаарай та 10 аас их тоо хэмжээтэй хоол захиалах боломжгүй',
             'phone.digits' => 'Утасны дугаар 8 оронтой байх ёстой',
         ];
 

@@ -60,7 +60,44 @@
     <input type="submit" id="form-submit" value="Захиалах">
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script  src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js"></script>
+
 <script>
+  
+
+  $(document).ready(function () {
+                $('#reserv').submit(function (e) {
+                    e.preventDefault(); // Prevent default form submission
+
+                    const nameValue = $('#name').val().trim();
+                    const numberValue = $('#number').val().trim();
+
+                    if (nameValue === '') {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Нэрээ оруулна уу.',
+                        });
+                        return; // Exit the function if name is empty
+                    }
+
+                    // Mongolian phone number validation using regex
+                    const mongolianPhoneNumberRegex = /^(?:\+976)?\s?(?!.*(\d{2})\1)[89]\d{7}$/;
+                    if (!mongolianPhoneNumberRegex.test(numberValue)) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Та утасны дугаараа зөв оруулна уу.',
+                        });
+                        return; // Exit the function if phone number is invalid
+                    }
+
+                    // If all validations pass, submit the form
+                    this.submit();
+                });
+            });
     // Get the date and time input fields
     var dateInput = document.getElementById('date');
     var timeInput = document.getElementById('time');
@@ -79,7 +116,6 @@
     dateInput.min = minDateString;
     timeInput.min = minTimeString;
 </script>
-<script  src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js"></script>
 
 
 
